@@ -1,5 +1,5 @@
 import styles from './recentTransactions.module.css';
-import {useState, useEffect, useContext} from 'react';
+import {useState,  useContext} from 'react';
 import { GoArrowRight } from "react-icons/go";
 import { GoArrowLeft } from "react-icons/go";
 import crossbutton from './../../assets/cross-button.png';
@@ -14,15 +14,13 @@ import { enqueueSnackbar } from 'notistack';
 
 
 export default function RecentTransactions({Transactions}){
-    // Transactions = JSON.parse(localStorage.getItem("Transactions"));
     let handleReload = useContext(MyContext);
     let [page, setPage] = useState(0);
     let [displayModal, setDisplayModal] = useState(false);
     let [selectedTransactionTitle, setSelectedTransactionTitle] = useState("");
-    let [Reload, setReload] = useState(true);
+    // let [Reload, setReload] = useState(true);
     let  customStyle = {
         content:{
-            // color:"orange",
             position:"center",
             height:"fit-content",
             width:"538px",
@@ -48,7 +46,6 @@ export default function RecentTransactions({Transactions}){
         setSelectedTransactionTitle(title);
     }
     let handleDeleteButton = (title)=>{
-        // console.log("handel delete button");
         let Transactions = JSON.parse(localStorage.getItem("Transactions"));
         let Amount = JSON.parse(localStorage.getItem("walletBalance")).Amount;
         let index = Transactions.findIndex((obj)=> obj.title === title);

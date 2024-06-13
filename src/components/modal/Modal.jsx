@@ -1,5 +1,5 @@
 import styles from './modal.module.css';
-import {useRef,useState,useContext, useEffect} from 'react';
+import {useRef,useState,useContext} from 'react';
 import {MyContext} from './../../pages/Dashbaord';
 import { enqueueSnackbar } from 'notistack';
 
@@ -12,12 +12,7 @@ export default function Modal({input1,input2="",input3="",input4="",title, selec
     let category = useRef();
     let date = useRef();
 
-    // useEffect(()=>{
-    //     console.log("inputs ",inputs);
-    // },[inputs]);
-
     let yesButtonHandler = ()=>{
-        // enqueueSnackbar("snackbar testing",{variant:"success"});
         if(title === "Add Balance"){
             let income = parseInt(inputs.income);
             let originalAmount = JSON.parse(localStorage.getItem("walletBalance")).Amount;
@@ -25,7 +20,6 @@ export default function Modal({input1,input2="",input3="",input4="",title, selec
             console.log(newAmount);
             localStorage.setItem("walletBalance",JSON.stringify({Amount:newAmount}));
             enqueueSnackbar("Balance added",{variant:"success"});
-            // console.log("completed");
         }else if(title === "Add Expenses"){
             // create a new object with data 
             let dataObject = {title:inputs.title,price:inputs.price,category:inputs.category,date:new Date(inputs.date)};

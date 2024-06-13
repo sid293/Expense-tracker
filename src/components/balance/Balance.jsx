@@ -34,7 +34,7 @@ export default function Balance({title, amount}){
         if(title !== "Income"){
             setColor("#FF3F3F");
         }
-    },[])
+    },[title])
 
     return(
         <div className={styles.wrapper}>
