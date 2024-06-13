@@ -1,0 +1,31 @@
+
+.wrapper{
+    height:100%;
+    /* border:2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper>*{
+    height:25%;
+    display:flex;
+    justify-content: center;
+}
+
+.innerbar{
+    background-color: #8784D2;
+}
+
+.name{
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+
+}
+
+
+p{
+    display: inline;
+}
